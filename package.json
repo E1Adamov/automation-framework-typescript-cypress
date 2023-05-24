@@ -1,0 +1,19 @@
+{
+  "name": "automation-framework-typescript-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.12.0",
+    "cypress-real-events": "^1.8.1",
+    "typescript": "^5.0.4"
+  }
+}
