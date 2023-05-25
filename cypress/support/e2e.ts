@@ -16,6 +16,25 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 import "cypress-real-events";
+import 'cypress-mochawesome-reporter/register';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// afterEach(function ()  {
+//     if (this.currentTest.state === 'failed') {
+//         // your code
+//     }
+// })
+
+beforeEach(function () {
+    let width = Cypress.env("viewportWidth")
+    let height = Cypress.env("viewportHeight")
+    cy.viewport(width, height)
+})
+
+afterEach(function() {
+    if(this.currentTest?.state === "passed") {
+        cy.screenshot()
+    }
+})

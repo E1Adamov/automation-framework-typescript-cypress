@@ -1,6 +1,8 @@
 node_modules/
 **/cypress/videos
+**/cypress/results
 **/cypress/screenshots
+**/cypress/reports
 coverage/
 .nyc_output/
 dist/
@@ -9,3 +11,8 @@ dist/
 cypress-coverage/
 yarn.lock
 .parcel-cache
+del_me/
+cypress/**/*.cy.js
+cypress/**/*.cy.js.map
+cypress/**/*.js
+cypress/**/*.js.map

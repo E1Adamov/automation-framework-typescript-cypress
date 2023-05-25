@@ -5,6 +5,8 @@ export class TodoHomePage extends BasePage {
     elements: { [key: string]: GetElementFunction } = {
         newTodoInput: () => cy.get('[data-test="new-todo"]'),
         existingTodoLis: () => cy.get('ul.todo-list li'),
+        existingTodoLis1: (text) => cy.get(`ul.todo-list li ${text}`),
+
     }
 
     getUrl(): string {
@@ -20,8 +22,8 @@ export class TodoHomePage extends BasePage {
 
     deleteAllTodos() {
         const existingTodoLis = this.elements.existingTodoLis()
-        existingTodoLis.each(existingTodoLi => {
-            cy.wrap(existingTodoLi).realHover().find("button.destroy").click()
+        existingTodoLis.each($existingTodoLi => {
+            cy.wrap($existingTodoLi).realHover().find("button.destroy").click()
         })
 
     }

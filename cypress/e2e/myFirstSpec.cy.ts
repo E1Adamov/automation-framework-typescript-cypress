@@ -1,10 +1,9 @@
 import { TodoHomePage } from "../page_object/todo_home_page"
 
 
-
 describe('This suite show cases the basic Cypress features', () => {
   it(
-    'creates a new todo', () => {
+    'creates a new todo', function () {
       const homePage: TodoHomePage = new TodoHomePage()
       homePage.deleteAllTodos()
 
@@ -19,8 +18,6 @@ describe('This suite show cases the basic Cypress features', () => {
         existingTodoTexts.push($existingTodoLiElement.text())
       })
 
-      cy.wrap(existingTodoTexts).should('deep.equal', [
-        newTodoText,
-      ])
+      cy.wrap(existingTodoTexts).should('deep.equal', [newTodoText])
   })
 })

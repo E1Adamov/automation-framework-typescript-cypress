@@ -2,8 +2,10 @@ export abstract class BasePage{
     
     abstract elements: {[key: string]: GetElementFunction}
     public url: string
+    // public context: Mocha.Context
 
     constructor () {
+        // this.context = context;
         this.url = this.getUrl();
         cy.visit(this.url);
     }
@@ -13,5 +15,5 @@ export abstract class BasePage{
 }
 
 export interface GetElementFunction {
-    (): Cypress.Chainable<JQuery<HTMLElement>>
+    (...args: Array<any>): Cypress.Chainable<JQuery<HTMLElement>>
 }
