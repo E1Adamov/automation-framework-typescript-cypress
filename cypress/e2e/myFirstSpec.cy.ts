@@ -5,6 +5,7 @@ describe('This suite show cases the basic Cypress features', () => {
   it(
     'creates a new todo', function () {
       const homePage: TodoHomePage = new TodoHomePage()
+  
       homePage.deleteAllTodos()
 
       const newTodoText: string = "new todo 1"
